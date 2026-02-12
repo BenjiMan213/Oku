@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oku</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Oku</h1>
+      <p class="subtitle">Speed reading, one word at a time.</p>
+    </header>
+
+    <section id="input-section">
+      <textarea
+        id="text-input"
+        placeholder="Paste or type your text here..."
+        rows="8"
+        spellcheck="false"
+      ></textarea>
+
+      <div class="controls">
+        <div class="speed-control">
+          <label for="wpm-slider">
+            Speed: <span id="wpm-display">300</span> WPM
+          </label>
+          <input
+            type="range"
+            id="wpm-slider"
+            min="50"
+            max="1000"
+            step="10"
+            value="300"
+          />
+        </div>
+
+        <button id="start-btn" class="btn btn-primary">Start</button>
+      </div>
+    </section>
+
+    <section id="reader-section" class="hidden">
+      <div id="word-display">
+        <span id="current-word"></span>
+      </div>
+
+      <div class="reader-controls">
+        <div class="speed-control">
+          <label for="wpm-slider-reader">
+            Speed: <span id="wpm-display-reader">300</span> WPM
+          </label>
+          <input
+            type="range"
+            id="wpm-slider-reader"
+            min="50"
+            max="1000"
+            step="10"
+            value="300"
+          />
+        </div>
+
+        <div class="reader-buttons">
+          <button id="pause-btn" class="btn btn-secondary">Pause</button>
+          <button id="stop-btn" class="btn btn-danger">Stop</button>
+        </div>
+      </div>
+
+      <div id="progress-bar-wrap">
+        <div id="progress-bar"></div>
+      </div>
+      <p id="progress-label">Word <span id="word-index">0</span> of <span id="word-total">0</span></p>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
